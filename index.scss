@@ -1,0 +1,181 @@
+$font-size-base: 1rem;
+$primary: #fed136;
+$section-padding: 120px;
+$background-portfolio: #f7f7f7;
+$page-menu-size: 175px;
+
+$header-jumbotron-height: 250px;
+
+@import "lib/bootstrap/scss/bootstrap";
+
+.page-header {
+    background-image: url("images/header-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+}
+
+.navbar-brand {
+    color: $primary;
+    font-style: italic;
+    padding-top: 0.2rem;
+}
+
+.header-jumbotron {
+    color: white;
+    height: 200px;
+    padding-bottom: 10px;
+
+    @include media-breakpoint-up(sm) {
+        height: $header-jumbotron-height + 50px;
+    }
+    
+    @include media-breakpoint-up(md) {
+        height: $header-jumbotron-height + 100px;
+    }
+    
+    @include media-breakpoint-up(lg) {
+        height: $header-jumbotron-height + 150px;
+    }
+}
+
+h1 {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.services {
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+}
+
+.icons-services {
+    color: $primary;
+    border: 3px solid $primary;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin: 0px auto;
+    padding-top: 0.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.portfolio {
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+    background-color: $background-portfolio;
+}
+
+.aboutus {
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+}
+
+.aboutus-image {
+    border-radius: 50%;
+    border: 5px solid $background-portfolio;
+}
+@include media-breakpoint-up(md){
+    .aboutus-background {
+        background: linear-gradient(to right,white 0%, white calc(50% - 1px), $background-portfolio calc(50% - 1px), $background-portfolio calc(50% + 1px), white calc(50% + 1px), white 100%);
+    }
+}
+
+.team {
+    background-color: $background-portfolio;
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+}
+
+.team-image {
+    border-radius: 50%;
+    border: 5px solid white;
+    width: 100%;
+}
+
+.icons-social {
+    color: black;
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: block;
+    margin: 0.2rem;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.contact {
+    background-color: #222222;
+    padding-top: $section-padding;
+    padding-bottom: $section-padding;
+    color: white;
+}
+
+.contact-message {
+    @include media-breakpoint-up(sm){
+        height: 100%
+    }
+    height: 6rem;
+}
+
+.footer {
+    &:hover {
+    text-decoration: none;
+    }
+    .footer-icon {
+        text-decoration: none;
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: black;
+        color: white;
+        border-radius: 50%;
+        margin: 0.2rem;
+    }
+}
+
+/*Mobile slider*/
+
+html, body {
+    overflow-x: hidden;
+}
+
+
+//Bugfix Navleiste Mobile-View
+
+/*body {
+    position: relative;
+}*/
+
+#page {
+    position: relative;
+    left: 0px;
+    transition: 0.5s all;
+    transform: translate(0px, 0px);
+
+    &.mobile-nav-opended {
+        transform: translate(-$page-menu-size, 0px);
+    }
+
+    .mobile-nav {
+        position: fixed;
+        right: -$page-menu-size;
+        width: $page-menu-size;
+        top: 0px;
+        bottom: 0px;
+        border-radius: 0px;
+        background-color: $background-portfolio;
+    }
+
+    .mobile-nav-link {
+        color: black;
+        text-decoration: none;
+        border-right: 0px solid transparent;
+        border-left: 0px solid transparent;
+        background-color: $background-portfolio;
+    }
+}
