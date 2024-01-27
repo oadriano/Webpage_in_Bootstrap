@@ -1,3 +1,3 @@
-# testsite_bootstrap
+# Webpage in Bootstrap
 
-My first responsive webpage and trying out bootstrap
+My first responsive webpage with Bootstrap
